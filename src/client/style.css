@@ -1,0 +1,33 @@
+/* Add these styles to your CSS file or in the `<style>` tag in your HTML */
+#chatLog {
+    display: flex;
+    flex-direction: column;
+    height: 300px;
+    overflow-y: auto;
+    width: 100%;
+    padding: 10px;
+  }
+  
+  .message {
+    max-width: 70%;
+    padding: 8px 12px;
+    margin: 5px 0;
+    border-radius: 10px;
+  }
+  
+  .message.sender {
+    background-color: #4CAF50; /* Sender message color (green) */
+    color: white;
+    align-self: flex-end; /* Position sender's message on the right */
+  }
+  
+  .message.receiver {
+    background-color: #f1f1f1; /* Receiver message color (light gray) */
+    color: black;
+    align-self: flex-start; /* Position receiver's message on the left */
+  }
+  
+  textarea {
+    resize: none;
+  }
+  

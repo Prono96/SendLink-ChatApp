@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Generate Room Link</title>
+</head>
+<body>
+  <h1>Generate a Room Link</h1>
+  <button id="generateLink">Generate Room Link</button>
+  <p id="roomLink" style="margin-top: 20px;"></p>
+
+  <script>
+    document.getElementById('generateLink').addEventListener('click', async () => {
+      try {
+        // Make a request to the API to create the room
+        const response = await fetch('/api/create-room');
+        const { roomLink } = await response.json();
+
+        // Display the generated room link
+        const roomLinkElement = document.getElementById('roomLink');
+        roomLinkElement.textContent = roomLink;
+        roomLinkElement.style.color = 'blue';
+        roomLinkElement.style.cursor = 'pointer';
+
+        // Add copy-to-clipboard functionality
+        roomLinkElement.addEventListener('click', () => {
+          navigator.clipboard.writeText(roomLink);
+          alert('Room link copied to clipboard!');
+        });
+      } catch (error) {
+        console.error('Error generating room link:', error);
+      }
+    });
+  </script>
+</body>
+</html>
