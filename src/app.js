@@ -7,11 +7,7 @@ const server = http.createServer(app);
 require('./socket')(server);
 const path = require('path');
 
-app.use(express.static(path.join(__dirname, 'client')));
-
-// app.get('/', (req, res) => {
-//     res.send('Express server is running!');
-// });
+app.use(express.static(path.join(__dirname, 'client')));;
 
 app.get('/create-room', (req, res) => {
     res.sendFile(path.join(__dirname, 'client', 'generatelink.html'));

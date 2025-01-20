@@ -2,8 +2,6 @@
 // const sendMessageBtn = document.getElementById('sendMessage');
 // const messageInput = document.getElementById('message');
 
-// console.log("got here 1")
-
 // // Extract roomId from URL
 // const urlParts = window.location.pathname.split('/');
 // const roomId = urlParts[urlParts.length - 1];

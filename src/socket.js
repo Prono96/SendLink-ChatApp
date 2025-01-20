@@ -21,13 +21,13 @@ const socket = (server) => {
       }
 
       if (type === 'message') {
-        // Broadcast message to all users in the room, including the sender
+        // Broadcast message to all users in the room
         rooms[roomId]?.forEach(client => {
           if (client.readyState === WebSocket.OPEN) {
-            client.send(JSON.stringify({ content }));
+            client.send(JSON.stringify({ content })); 
           }
         });
-      }
+      }      
     });
 
     ws.on('close', () => {
